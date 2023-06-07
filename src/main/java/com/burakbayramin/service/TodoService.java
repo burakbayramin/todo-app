@@ -5,6 +5,7 @@ import com.burakbayramin.repository.TodoRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
+import java.util.Optional;
 
 @Service
 public class TodoService {
@@ -29,5 +30,9 @@ public class TodoService {
 
     public void delete(Todos todos) {
         todoRepository.delete(todos);
+    }
+
+    public Optional<Todos> getById(Long id) {
+        return todoRepository.findById(id);
     }
 }
